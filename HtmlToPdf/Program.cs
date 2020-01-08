@@ -1,12 +1,13 @@
-﻿using System;
+﻿using PdfGenerator;
 
 namespace HtmlToPdf
 {
-	class Program
+	internal class Program
 	{
-		static void Main(string[] args)
+		private static void Main(string[] args)
 		{
-			
+			var pdfWriter = new PdfWriter();
+			pdfWriter.WriteFile("<h1>Hello World</h1>", "html-string.pdf");
 		}
 	}
 }
