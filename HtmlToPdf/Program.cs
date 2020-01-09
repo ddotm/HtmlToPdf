@@ -1,4 +1,5 @@
 ﻿using PdfGenerator;
+using TemplateProcessing;
 
 namespace HtmlToPdf
 {
@@ -6,8 +7,11 @@ namespace HtmlToPdf
 	{
 		private static void Main(string[] args)
 		{
+			var templateProcessor = new TemplateProcessor();
 			var pdfWriter = new PdfWriter();
-			pdfWriter.WriteFile("<style>.text-red {color: red;}</style><h1 class=\"text-red\">Hello, world!</h1>", "html-string.pdf");
+
+			var html = templateProcessor.Process("1", new { title = "Hello, templating!"});
+			pdfWriter.WriteFile(html, "html-string.pdf");
 		}
 	}
 }

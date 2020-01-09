@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PdfGenerator\PdfGenerator.csproj" />
+    <ProjectReference Include="..\TemplateProcessing\TemplateProcessing.csproj" />
   </ItemGroup>
 
 </Project>
