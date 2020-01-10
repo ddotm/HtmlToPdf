@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HtmlToPdf", "HtmlToPdf\Html
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PdfGenerator", "PdfGenerator\PdfGenerator.csproj", "{41FADB71-E45D-4480-A1CB-EB9F8713E75A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateProcessing", "TemplateProcessing\TemplateProcessing.csproj", "{C51BE4E2-B27C-49CF-8E78-4E40B2A1711F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateProcessing", "TemplateProcessing\TemplateProcessing.csproj", "{C51BE4E2-B27C-49CF-8E78-4E40B2A1711F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
