@@ -1,20 +1,36 @@
 <style>
-  .text-red { color: red; }
+  .text-red {
+    color: red;
+  }
 </style>
 
 <table>
   <thead>
-  <tr>
-    <th class="text-red">Full Name</th>
-    <th>Company</th>
-    <th>Job Title</th>
-  </tr>
+    <tr>
+      <th class="text-red">Full Name</th>
+      <th>Company</th>
+      <th>Job Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-red">{{contactDetails.contact}}</td>
+      <td>{{contactDetails.companyName}}</td>
+      <td>{{contactDetails.jobTitle}}</td>
+    </tr>
+  </tbody>
+</table>
+
+{{{connections}}}
+<table>
+  <thead>
+    <tr>
+      <th></th>
+    </tr>
   </thead>
   <tbody>
   <tr>
-    <td class="text-red">{{contactDetails.contact}}</td>
-    <td>{{contactDetails.companyName}}</td>
-    <td>{{contactDetails.jobTitle}}</td>
+    <td></td>
   </tr>
   </tbody>
 </table>

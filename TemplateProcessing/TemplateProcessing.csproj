@@ -9,6 +9,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Templates\connections.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Templates\contact-info.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

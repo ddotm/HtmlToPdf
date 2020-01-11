@@ -21,6 +21,7 @@ namespace TemplateProcessing
 			return id switch
 			{
 				1 => $@"{templatePath}contact-info.html",
+				2 => $@"{templatePath}connections.html",
 				_ => string.Empty,
 			};
 		}
