@@ -1,4 +1,5 @@
-﻿using HandlebarsDotNet;
+﻿using System.IO;
+using HandlebarsDotNet;
 using System.Reflection;
 
 namespace TemplateProcessing
@@ -16,8 +17,8 @@ namespace TemplateProcessing
 
 		private string GetTemplateFileName(int id)
 		{
-			var exePath = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-			var templatePath = $@"{exePath}/Templates/";
+			var exePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+			var templatePath = $@"{exePath}\Templates\";
 			return id switch
 			{
 				1 => $@"{templatePath}contact-info.html",

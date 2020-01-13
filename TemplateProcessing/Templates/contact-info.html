@@ -1,36 +1,53 @@
-<style>
-  .text-red {
-    color: red;
-  }
-</style>
+<!DOCTYPE html>
 
-<table>
-  <thead>
-    <tr>
-      <th class="text-red">Full Name</th>
-      <th>Company</th>
-      <th>Job Title</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="text-red">{{contactDetails.contact}}</td>
-      <td>{{contactDetails.companyName}}</td>
-      <td>{{contactDetails.jobTitle}}</td>
-    </tr>
-  </tbody>
-</table>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
-{{{connections}}}
-<table>
-  <thead>
-    <tr>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td></td>
-  </tr>
-  </tbody>
-</table>
+  <style type="text/css">
+    .text-red {
+      color: red;
+    }
+
+    div.page {
+      page-break-after: always;
+      page-break-inside: avoid;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th class="text-red">Full Name</th>
+        <th>Company</th>
+        <th>Job Title</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="text-red">{{contactDetails.contact}}</td>
+        <td>{{contactDetails.companyName}}</td>
+        <td>{{contactDetails.jobTitle}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page">&nbsp;</div>
+
+  {{{connections}}}
+
+  <!-- <table> -->
+  <!--   <thead> -->
+  <!--     <tr> -->
+  <!--       <th></th> -->
+  <!--     </tr> -->
+  <!--   </thead> -->
+  <!--   <tbody> -->
+  <!--   <tr> -->
+  <!--     <td></td> -->
+  <!--   </tr> -->
+  <!--   </tbody> -->
+  <!-- </table> -->
+</body>
+</html>

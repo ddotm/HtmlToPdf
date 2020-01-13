@@ -1,4 +1,7 @@
-﻿using PdfGenerator;
+﻿using System.Diagnostics;
+using System.IO;
+using System.Reflection;
+using PdfGenerator;
 using TemplateProcessing;
 
 namespace HtmlToPdf
@@ -9,7 +12,6 @@ namespace HtmlToPdf
 		{
 			var templateProcessor = new TemplateProcessor();
 			var pdfWriter = new PdfWriter();
-
 
 			var connections = new dynamic[]
 			{
@@ -104,7 +106,18 @@ namespace HtmlToPdf
 
 			var html = templateProcessor.Process(1, data);
 
-			pdfWriter.WriteFile(html, "report.pdf");
+			var exePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+			var pdfPath = $@"{exePath}\report.pdf";
+			pdfWriter.WriteFile(html, pdfPath);
+
+			var p = new Process
+			{
+				StartInfo = new ProcessStartInfo(pdfPath)
+				{
+					UseShellExecute = true
+				}
+			};
+			p.Start();
 		}
 	}
 }
