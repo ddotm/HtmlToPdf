@@ -2,52 +2,73 @@
 
 <html>
 <head>
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
 
   <style type="text/css">
-    .text-red {
-      color: red;
-    }
+    .text-red { color: red; }
 
-    div.page {
+    .no-page-break { page-break-inside: avoid; }
+
+    .page-break { page-break-after: always; }
+
+    .page {
       page-break-after: always;
       page-break-inside: avoid;
     }
   </style>
 </head>
 <body>
-  <table>
-    <thead>
-      <tr>
-        <th class="text-red">Full Name</th>
-        <th>Company</th>
-        <th>Job Title</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="text-red">{{contactDetails.contact}}</td>
-        <td>{{contactDetails.companyName}}</td>
-        <td>{{contactDetails.jobTitle}}</td>
-      </tr>
-    </tbody>
-  </table>
+<table>
+  <thead>
+  <tr>
 
-  <div class="page">&nbsp;</div>
+    <th class="text-red">Full Name</th>
+    <th>Company</th>
+    <th>Job Title</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td class="text-red">{{contactDetails.contact}}</td>
+    <td>{{contactDetails.companyName}}</td>
+    <td>{{contactDetails.jobTitle}}</td>
+  </tr>
+  </tbody>
+</table>
 
+<!-- <div class="page">&nbsp;</div> -->
+
+<table>
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Job Title</th>
+  </tr>
+  </thead>
+  <tbody>
   {{{connections}}}
+  </tbody>
+</table>
 
-  <!-- <table> -->
-  <!--   <thead> -->
-  <!--     <tr> -->
-  <!--       <th></th> -->
-  <!--     </tr> -->
-  <!--   </thead> -->
-  <!--   <tbody> -->
-  <!--   <tr> -->
-  <!--     <td></td> -->
-  <!--   </tr> -->
-  <!--   </tbody> -->
-  <!-- </table> -->
+<!-- <table> -->
+<!--   <thead> -->
+<!--     <tr> -->
+<!--       <th></th> -->
+<!--     </tr> -->
+<!--   </thead> -->
+<!--   <tbody> -->
+<!--   <tr> -->
+<!--     <td></td> -->
+<!--   </tr> -->
+<!--   </tbody> -->
+<!-- </table> -->
+<div class="no-page-break">
+  <p>Line 1</p>
+  <p>Line 2</p>
+  <p>Line 3</p>
+  <p>Line 4</p>
+  <p>Line 5</p>
+</div>
 </body>
 </html>

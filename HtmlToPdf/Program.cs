@@ -1,7 +1,8 @@
-﻿using System.Diagnostics;
+﻿using HtmlToPdf.Models;
+using PdfGenerator;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
-using PdfGenerator;
 using TemplateProcessing;
 
 namespace HtmlToPdf
@@ -13,9 +14,9 @@ namespace HtmlToPdf
 			var templateProcessor = new TemplateProcessor();
 			var pdfWriter = new PdfWriter();
 
-			var connections = new dynamic[]
+			var connections = new Connection[]
 			{
-				new
+				new Connection
 				{
 					contactType = "I",
 					connectionContactType = "I",
@@ -28,43 +29,53 @@ namespace HtmlToPdf
 					emailType = "(Home)",
 					phoneNumberType = "(Mobile)",
 					countryCode = "+1-264",
-					extension = ""
+					extension = "",
+					rowClass = ""
 				},
-				new
-				{
-					contactType = "I",
-					connectionContactType = "I",
-					jobTitleRole = "CIO",
-					connectionContact = "Jack Porter",
-					contact = "Dmitri Mogilevski",
-					connectionRoles = "Accountant;Business Manager",
-					number = "447709786920",
-					email = "benjackson007@hotmail.co.uk",
-					emailType = "(Home)",
-					phoneNumberType = "(Mobile)",
-					countryCode = "+1-264",
-					extension = ""
-				},
-				new
-				{
-					contactType = "I",
-					connectionContactType = "I",
-					jobTitleRole = "Senior Dev",
-					connectionContact = "Tim Eck",
-					contact = "Dmitri Mogilevski",
-					connectionRoles = "Accountant;Business Manager",
-					number = "447709786920",
-					email = "benjackson007@hotmail.co.uk",
-					emailType = "(Home)",
-					phoneNumberType = "(Mobile)",
-					countryCode = "+1-264",
-					extension = ""
-				}
+				// new Connection
+				// {
+				// 	contactType = "I",
+				// 	connectionContactType = "I",
+				// 	jobTitleRole = "CIO",
+				// 	connectionContact = "Jack Porter",
+				// 	contact = "Dmitri Mogilevski",
+				// 	connectionRoles = "Accountant;Business Manager",
+				// 	number = "447709786920",
+				// 	email = "benjackson007@hotmail.co.uk",
+				// 	emailType = "(Home)",
+				// 	phoneNumberType = "(Mobile)",
+				// 	countryCode = "+1-264",
+				// 	extension = "",
+				// 	rowClass = ""
+				// },
+				// new Connection
+				// {
+				// 	contactType = "I",
+				// 	connectionContactType = "I",
+				// 	jobTitleRole = "Senior Dev",
+				// 	connectionContact = "Tim Eck",
+				// 	contact = "Dmitri Mogilevski",
+				// 	connectionRoles = "Accountant;Business Manager",
+				// 	number = "447709786920",
+				// 	email = "benjackson007@hotmail.co.uk",
+				// 	emailType = "(Home)",
+				// 	phoneNumberType = "(Mobile)",
+				// 	countryCode = "+1-264",
+				// 	extension = "",
+				// 	rowClass = ""
+				// }
 			};
 			var connectionsHtml = string.Empty;
+			var index = 1;
 			foreach (var connection in connections)
 			{
-				connectionsHtml += templateProcessor.Process(2, connection);
+				var max = 42;
+				for (var i = 0; i < max; i++)
+				{
+					connection.rowClass = i == (max - 1) ? "page-break" : "";
+					connection.Index = index++;
+					connectionsHtml += templateProcessor.Process(2, connection);
+				}
 			}
 
 			var data = new
